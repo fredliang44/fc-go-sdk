@@ -431,6 +431,74 @@ func (c *Client) ListTriggers(input *ListTriggersInput) (*ListTriggersOutput, er
 	return output, nil
 }
 
+// CreateCustomDomain creates custom domain
+func (c *Client) CreateCustomDomain(input *CreateCustomDomainInput) (*CreateCustomDomainOutput, error) {
+	if input == nil {
+		input = new(CreateCustomDomainInput)
+	}
+
+	var output = new(CreateCustomDomainOutput)
+	httpResponse, err := c.sendRequest(input, http.MethodPost)
+	if err != nil {
+		return nil, err
+	}
+
+	output.Header = httpResponse.Header()
+	json.Unmarshal(httpResponse.Body(), output)
+	return output, nil
+}
+
+// UpdateCustomDomain creates custom domain
+func (c *Client) UpdateCustomDomain(input *UpdateCustomDomainInput) (*UpdateCustomDomainOutput, error) {
+	if input == nil {
+		input = new(UpdateCustomDomainInput)
+	}
+
+	var output = new(UpdateCustomDomainOutput)
+	httpResponse, err := c.sendRequest(input, http.MethodPost)
+	if err != nil {
+		return nil, err
+	}
+
+	output.Header = httpResponse.Header()
+	json.Unmarshal(httpResponse.Body(), output)
+	return output, nil
+}
+
+// GetCustomDomain creates custom domain
+func (c *Client) GetCustomDomain(input *GetCustomDomainInput) (*GetCustomDomainOutput, error) {
+	if input == nil {
+		input = new(GetCustomDomainInput)
+	}
+
+	var output = new(GetCustomDomainOutput)
+	httpResponse, err := c.sendRequest(input, http.MethodPost)
+	if err != nil {
+		return nil, err
+	}
+
+	output.Header = httpResponse.Header()
+	json.Unmarshal(httpResponse.Body(), output)
+	return output, nil
+}
+
+// DeleteCustomDomain creates custom domain
+func (c *Client) DeleteCustomDomain(input *DeleteCustomDomainInput) (*DeleteCustomDomainOutput, error) {
+	if input == nil {
+		input = new(DeleteCustomDomainInput)
+	}
+
+	var output = new(DeleteCustomDomainOutput)
+	httpResponse, err := c.sendRequest(input, http.MethodPost)
+	if err != nil {
+		return nil, err
+	}
+
+	output.Header = httpResponse.Header()
+	json.Unmarshal(httpResponse.Body(), output)
+	return output, nil
+}
+
 // TagResource make a resource with tags
 func (c *Client) TagResource(input *TagResourceInput) (*TagResourceOut, error) {
 	if input == nil {
